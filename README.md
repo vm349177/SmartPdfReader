@@ -37,3 +37,14 @@ Used Transformer.js feature extraction pipeline (CSP makes it hard) followed thi
   - Read feature extraction(what it does)
   - an importance calculation formula
   - Learn about TTS
+
+## how to run
+- Install Node.js check npm command works
+```
+npm install
+```
+```
+npm run build
+```
+- Upload the build file in chrome://extensions/ (use load unpacked option after switching to developer mode)
+- Open a PDF using chrome click on extentions tab then read aloud and inspect the read aloud dialog box (console says everything)
