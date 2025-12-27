@@ -1,0 +1,9 @@
+/node_modules
+/build/pdfjs/
+/build/*.js
+/build/manifest.json
+/build/*.css
+/build/*.html
+/build/*.mjs
+/build/*.wasm
+package-lock.json
