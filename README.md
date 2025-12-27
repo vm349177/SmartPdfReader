@@ -1,14 +1,39 @@
 # SmartPdfReader
 Chrome extension that can read a PDF opened in Chrome and extract clean text
+
+## Project Structure
 ```
 smart-read-aloud/
 │
-├── manifest.json
-├── content.js          ← injected into PDF page
-├── pdfjs/              ← PDF.js library
-│   ├── pdf.min.js
-│   └── pdf.worker.min.js
-├── panel.html          ← (optional) text viewer
-├── panel.js
-└── styles.css
+├── build
+│    └── assets/              ← PDF.js library
+│       ├── icon1
+│       └── icon2
+├── public
+│    ├── manifest.json
+│    ├── popup.mjs
+│    └── pdfjs/              ← PDF.js library
+│       ├── pdf.min.js
+│       └── pdf.worker.min.js
+├── src
+│    ├── content.js
+│    ├── popup.html          ← (optional) text viewer
+│    ├── service_worker.js
+│    └── styles.css
+├── package.json
+└── webpack.config.js
 ```
+
+## Architecture
+- popup.html (popup.mjs) creates a dialog box having read aloud option which when clicked
+  -askes for pdf link from content.js
+  -extracts sentences using pdfjs library
+  -send the extracted sentences to background.js
+- background.js run feature extraction and NLP ,creating importance scores 
+
+## NLP
+Used Transformer.js feature extraction pipeline (CSP makes it hard) followed this extention [example](https://github.com/huggingface/transformers.js/tree/main/examples/extension)
+- Current Plan 
+  - Read feature extraction(what it does)
+  - an importance calculation formula
+  - Learn about TTS
