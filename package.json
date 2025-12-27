@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "@huggingface/transformers": "^3.8.1"
+  },
+  "name": "smartpdfreader",
+  "version": "1.0.0",
+  "description": "Chrome extension that can read a PDF opened in Chrome and extract clean text\r ```\r smart-read-aloud/\r │\r ├── manifest.json\r ├── content.js          ← injected into PDF page\r ├── pdfjs/              ← PDF.js library\r │   ├── pdf.min.js\r │   └── pdf.worker.min.js\r ├── panel.html          ← (optional) text viewer\r ├── panel.js\r └── styles.css\r ```",
+  "main": "content.js",
+  "devDependencies": {
+    "copy-webpack-plugin": "^13.0.1",
+    "html-webpack-plugin": "^5.6.5",
+    "vite": "^7.3.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vm349177/SmartPdfReader.git"
+  },
+  "author": "Varun",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/vm349177/SmartPdfReader/issues"
+  },
+  "homepage": "https://github.com/vm349177/SmartPdfReader#readme"
+}
